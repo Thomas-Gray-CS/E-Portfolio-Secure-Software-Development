@@ -1,10 +1,6 @@
-System Implementation Assignment - Driverless Car
+### Individual Assignment - System Implementation and Evidence of Testing
 
-Below is the Python code to support the operation of a driverless car, as well as an accompanying file that explains my thought processes and decision making while completing this. This contributes to and shows how I meet Learning Outcomes:
-1) Appraise and critically evaluate object-oriented programming compared to other programming paradigms.
-2) Design and implement programs that demonstrate appropriate use of object-oriented design principles.
-3) Select and use appropriate data structures for a given problem..
-
+This assignment followed on from the design assignment, and required me to use Python to create the School Management System, create unit tests for this and use linters to analyse the quality.
 
 ### Code for School System implementation
 
