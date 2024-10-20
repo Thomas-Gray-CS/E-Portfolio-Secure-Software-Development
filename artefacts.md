@@ -53,9 +53,6 @@ for postcode in postcodes:
 
 ```
 
----
-
-
 ### Unit 5: An Introduction to Testing
 
 Below is a discussion regarding the relevance of Cyclomatic Complexity in modern day programming.
@@ -87,48 +84,7 @@ Below is my summary post from the discussions in Unit 8 and Unit 9.
 
 [Summary Post](/pdf/summary ssd.pdf)
 
-### Unit 
 
-The below artefact shows how I meet Learning Outcome 2) Design and implement programs that demonstrate appropriate use of object-oriented design principles.
-
-
-### Artefact 5: Polymorphism Example
-
-The below artefact also shows how I meet Learning Outcome 2) Design and implement programs that demonstrate appropriate use of object-oriented design principles.
-
-```
-    class SteerLeft:
-        def __init__(self, direction, degrees):
-            self.direction = direction 
-            self.degrees = degrees
-    
-        def info(self):
-            print(f"Turning {self.direction} for {self.degrees}.")
-    
-    
-    
-    class SteerRight:
-        def __init__(self, direction, degrees):
-            self.direction = direction # this has been reused from the SteerLeft class as a form of polymorphism
-            self.degrees = degrees
-    
-        def info(self):
-            print(f"Turning {self.direction} for {self.degrees}.")
-        
-    
-    Left1 = SteerLeft("Left", 90)
-    Right1 = SteerRight("Right", 90)
-    
-    for directional in (Left1, Right1):
-        directional.info()
-```
-
----
-### Artefact 6: Discussion On Cyclomatic Complexity
-
-The below artefact shows how I meet Learning Outcome 1) Appraise and critically evaluate object-oriented programming compared to other programming paradigms.
-
-[Cyclomatic Complexity](/pdf/cyclomatic_complexity.pdf)
 
 
 
