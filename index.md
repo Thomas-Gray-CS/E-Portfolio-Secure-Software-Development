@@ -2,24 +2,24 @@
 
 ---
 
-### Object Oriented Programming
+### Secure Software Development
 
-[OOP Artefacts](/artefacts.md)
+[SSD Artefacts](/artefacts.md)
 
 <img src="images/Compute.jpg?raw=true"/>
 
 ---
-[OOP Reflections](/reflections.md)
+[SSD Reflections](/reflections.md)
 
 <img src="images/reflection.jpg?raw=true"/>
 
 ---
-[System Design Assignment](/system_design.md)
+[Team Assignment](/team_assignment.md)
 
 <img src="images/uml.jpg?raw=true"/>
 
 ---
-[System Implementation Assignment](/system_implementation.md)
+[Individual Assignment](/individual_assignment.md)
 
 <img src="images/python.jpg?raw=true"/>
 
