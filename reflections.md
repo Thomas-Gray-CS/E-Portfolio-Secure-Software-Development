@@ -2,14 +2,14 @@
 
 Below are reflection pieces written regarding two of the assignments completed during this module. One relates to the system design process and one relates to the system implementation process.
 
-### System Design Reflection
+### Team Reflection
 
 [Team Reflection](/pdf/ssd_team_reflection.pdf) 
 
 
-### System Implementation Reflection
+### Individual Reflection
 
-[System Implementation - Reflection](/pdf/s_ystem_implementation_reflection.pdf) 
+[Individual Reflection](/pdf/ssd_individual_reflection.pdf) 
 
 
 ### Final Reflection - Secure Software Development
