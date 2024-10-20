@@ -10,263 +10,155 @@ Below is the Python code to support the operation of a driverless car, as well a
 
 
   ```
-      class DriverlessCar:
-      # Initial class for the car
-      
-        make = "Ford"
-        model = "Fiesta"
-        id = 13344
-        build_year = 2023
-        registration = "DN23 RPF"
-      # The above is just generic information about the vehicle
+     import uuid # imports UUID for use in student ID security
+
+import bcrypt # import bcrypt for use in password hashing
+
+
+class Student: # defines a class for each student record
+
+    def __init__(self, name, year_group, form): # defines each attribute that objects in this class will have
+        self.student_id = uuid.uuid4().hex  # Generate a unique ID using UUID
+        self.name = name # sets name
+        self.year_group = year_group # sets year group
+        self.form = form # sets form
+        self.classes = set() # creates a set for classes, so they cannot be repeated
+
+    def add_class(self, class_title): # function for adding a class to a student
+        self.classes.add(class_title)
+
+    def remove_class(self, class_title): # function for removing a class from a student
+        self.classes.discard(class_title)
+
+    def get_student_details(self): # function to return all attributes for a student
+        return {
+            "ID": self.student_id,
+            "name": self.name,
+            "year": self.year_group,
+            "form": self.form
+        }
+    
+    def __repr__(self):
+        return "student details({self.student_id}, {self.name}, {self.year_group}, {self.form})" # provides all student details
+
+class StudentRecords: # class for the entire student record
+    def __init__(self):
+        self.students = {} # dictionary of students to link to student class
+
+    def add_student(self, name, year_group, form): # adds student to the student class
+        student = Student(name, year_group, form)
+        self.students[student.student_id] = student
         
-      class TripComputer: # Class for the trip computer and car controls
-      
-        current_speed = 0 # Will be modified by functions and inputs as needed
-        max_speed = 150  # Top speed before braking automatically
-        car_in_use = True 
-        car_forward = True 
-        car_reverse = True 
-        car_steer_left = True 
-        car_steer_right = True 
-        car_speed_up = True 
-        car_slow_down = True
-        car_brake = True 
-      
-      # Each of the above is set with a Boolean to represent that they can be
-      # on (True) or off (false) as there are no other states that they can
-      # be in
-        
-        def __init__(self, start, stop, forward, reverse, steerleft, steerright, speedup, slowdown, brake):
-          self.start = start
-          self.stop = stop
-          self.forward = forward
-          self.reverse = reverse
-          self.steerleft = steerleft
-          self.steerright = steerright
-          self.speedup = speedup
-          self.slowdown = slowdown
-          self.brake = brake 
-      
-      # Each of functions is initialised within itself to ensure that they are
-      # all available as all will be required
-      
-          def start(self):
-            if self.car_in_use:
-              print("Vehicle Starting")
-          endif  
-      
-          def stop(self):
-            if not self.car_in_use:
-              print("Vehicle Stopping")
-          endif 
-      
-          def forward(self):
-            if self.car_forward:
-              print("Car Moving Forward")
-          endif
-      
-          def reverse(self):
-            if self.reverse:
-              print("Car Reversing")
-          endif
-      
-          def steerleft(self):
-            if self.steerleft:
-              print("Car Turning Left")
-          endif
-      
-          def steerright(self):
-            if self.steerright:
-              print("Car Turning Right")
-          endif
-      
-      # Each of the above are written so that if the relative attribute is
-      # true (as in, it is on), the relative function will execute
-      
-          def speedup(self):
-            if current_speed < sign_value:
-              current_speed = sign_value
-            else:
-              current_speed = current_speed
-      
-          def slowdown(self):
-            if current_speed > sign_value:
-              current_speed = sign_value
-            else:
-              current_speed = current_speed
-      
-          def brake(self):
-            if self.hazard_detected:
-              current_speed = 0
-            else:
-              current_speed = current_speed 
-      
-      # The three above functions should allow for the current speed
-      # to be amended from either hazard or speed sign inputs
-      # with the ability to maintain speed if not detected 
-      
-          def createtripdictionary():
-            dict = {
-              T_F1: start,
-              T_F2: stop,
-              T_F3: forward,
-              T_F4: reverse,
-              T_F5: steerleft,
-              T_F6: steerright,
-              T_F7: speedup,
-              T_F8: slowdown,
-              T_F9: brake,
-            }    
-            return dict
-      
-          tripdictionary = createtripdictionary   
-      
-      # The dictionary for the trip computer makes it easier for functions
-      # to be called when required
-      
-      class SpeedSensor:
-      
-        current_speed = () # This allows for speed to be updated in time
-        speed_sign_detected = True # Boolean for sign dection
-        sign_value = () # Value of sign to be added as detected
-      
-        def __init__(self, nosign, twenty, thirty, forty, fifty, sixty, seventy):
-          self.nosign = nosign
-          self.twenty = twenty
-          self.thirty = thirty
-          self.forty = forty
-          self.fifty = fifty
-          self.sixty = sixty
-          self.seventy = seventy
-      
-      # Above functions allow for all speed signs on British roads
-      
-          def nosign(self):
-            if not speed_sign_detected.self:
-              current_speed = current_speed
-      
-      # If no sign detected (False), speed remains the same 
-      
-          def twenty(self):
-            if speed_sign_detected.self and sign_value == twenty:
-              current_speed = 20
-          
-          def thirty(self):
-            if speed_sign_detected.self and sign_value == thirty:
-              current_speed = 30
-      
-          def forty(self):
-            if speed_sign_detected.self and sign_value == forty:
-              current_speed = 40  
-      
-          def fifty(self):
-            if speed_sign_detected.self and sign_value == fifty:
-              current_speed = 50  
-      
-          def sixty(self):
-            if speed_sign_detected.self and sign_value == sixty:
-              current_speed = 60  
-      
-          def seventy(self):
-            if speed_sign_detected.self and sign_value == seventy:
-              current_speed = 70  
-      
-      # Above functions change speed once sign detected, and change
-      # to value of applicable sign
-      
-          def createspeeddictionary():
-      
-            dict = {
-              s_F1: nosign,
-              S_F2: twenty,
-              S_F3: thirty,
-              S_F4: forty,
-              S_F5: fifty,
-              S_F6: sixty,
-              S_F7: seventy
-            }
-            return dict
-      
-          speeddictionary = createspeeddictionary
-      
-      # Dictionary created for the speed sign functions for easier recall
-      # and efficiency
-      
-      class HazardSensor:
-      
-        hazard_detected = True
-        
-        def __init__(self, hazard):
-      
-          def hazard(self):
-            if self.hazard_detected:
-              current_speed = 0
-            else:
-              current_speed = current_speed
-      
-      # Simple class and function for hazards. All hazards will require 
-      # the car to slow down. If no hazard detected, no change needed
-      
-      class GPS:
-      
-        current_location = ()
-        destination = ()
-        start_point = ()
-      
-      # Above attributes are able to be amended as users input for
-      # journeys
-      
-        destination_list = [] # List created to store previous destinations
-      
-        def __init__(self, journeyended, journeystart, savedestination, searchdestination):
-          self.journeyended = journeyended
-          self.jounryestart = journeystart
-          self.savedestination = savedestination
-          self.searchdestination = searchdestination
-      
-          def journeyended(self):
-            if current_location == destination:
-              print("Destination Reached")
-          endif
-      
-          def journeystart(self):
-            if current_location == start_point:
-              print("Begin Journey")
-          endif
-      
-      # Above two functions are able to identify both start and end of
-      # journey, informing passengers of this
-      
-          def savedestination(self):
-            if destination not in destination_list:
-              destination_list.append(destination)
-          endif
-      
-      # Above function allows for destinations to be added to the list
-      # as required
-      
-          def searchdestination(self):
-            if destination in destination_list:
-              print(destination) in destination_list
-          endif
-      
-      # Above function allows passengers to search for destinations and
-      # use them
-      
-          def creategpsdictionary():
-      
-            dict = {
-              G_F1: journeyended,
-              G_F2: journeystart,
-              G_F3: savedestination,
-              G_F4: searchdestination
-            }
-            return dict
-      
-          gpsdictionary = creategpsdictionary
-          
-      # Dictionary created to store GPS functions for efficiency and useability
+    def display_student(self, student_id): # prints student in the student class if student found
+        if student_id in self.students:
+            student = self.students[student_id]
+            print("{student.student_id}, {student.name}, {student.year_group}, {student.form}.")
+        else:
+            print("Student {student_id} not found.") # prints student if not found
+
+    def remove_student(self, student_id): # function to remove a student
+        if student_id in self.students:
+            del self.students[student_id]
+            print("Student deleted.") # indicates student deleted
+        else:
+            print("Student {student_id} not found.") # prints that student not found
+
+admin_users = {} # dictionary for admin login details
+
+def hash_password(password): # function to hash passwords
+    salt = bcrypt.gensalt()
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt) # hashes password and adds salt
+    return hashed_password # returns hashed password for use
+
+admin_users["T.Gray"] = hash_password("Password1234") # test record to indicate how passwords will be stored
+admin_users["B.McDonald"] = hash_password("TestPass99") # test record to indicate how passwords will be stored
+admin_users["M.Jordan"] = hash_password("MockPass123!") # test record to indicate how passwords will be stored
+
+users = {} # dictionary for general users, with same functions as admin_users
+
+def hash_password(password):
+    salt = bcrypt.gensalt()
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
+    return hashed_password
+
+users["H.Ford"] = hash_password("Number1Pass")
+users["D.Leland"] = hash_password("WeWantPass")
+users["Q.Regan"] = hash_password("HelloWorld!")
+
+def admin_check(): # function to check if user is admin
+    admin_rights = input("Admin Login Y/N? ")
+    if admin_rights == "Y": # if admin, calls the admin login function
+        admin_login()
+    elif admin_rights == "N": # if not admin, calls general login function
+        login()
+
+def admin_login(): # function just for admin logins
+    username = input("Enter your username: ") # user enters username
+    password = input("Enter your password: ") # user enters password
+    if username not in admin_users:
+        print("Username not found") # indicates if not found
+        return False
+    if bcrypt.checkpw(password.encode('utf-8'), admin_users[username]): 
+        print("Login successful") # indicates that username and password are correct
+        admin_functions() # calls admin functions
+        return True
+    else:
+        print("Password incorrect.") # indicates password incorrect and doesn't proceed
+        return False
+    
+def admin_functions(): # functions that are called after successful admin login 
+    admin_option = int(input("What would you like to do today? To search for a student, press 1. To add a student, press 2. To delete a student, press 3. ")) # allows users to select what to do, and confirms a number is used
+    records = StudentRecords() # links student records for ease of use
+    if admin_option == 1:
+        student_id = input("Enter student ID: ") # allows admin to search for students
+        records.display_student(student_id)
+        menu_choice = input("To retun to menu, press 1: ")
+        if menu_choice == 1:
+            admin_functions()
+    elif admin_option == 2: # allows admins to create students
+        name = input("Enter student name: ")
+        year_group = input("Enter year group: ")
+        form = input("Enter form: ")
+        records.add_student(name, year_group, form) # adds student to student record class, which in turn adds to student class
+        print("Student added")
+        menu_choice = input("To retun to menu, press 1: ")
+        if menu_choice == 1:
+            admin_functions()
+    elif admin_option == 3:
+        student_id = input("Enter student ID: ")
+        records.remove_student(student_id) # removes student on linked student ID
+        print("Student removed")
+        menu_choice = input("To retun to menu, press 1: ")
+        if menu_choice == 1:
+            admin_functions()
+
+def read_only_functions(): # function just for read only users
+    student_id = input("Please enter a student ID: ") # search on student ID
+    records = StudentRecords()
+    if student_id in records.students:
+        print(records.students[student_id].get_student_details()) # if ID found, full record printed
+        menu_choice = input("To retun to menu, press 1")
+        if menu_choice == 1:
+            read_only_functions()
+    else:
+        print("Student not found.") # indicates student ID is wrong
+        read_only_functions()
+
+def login(): # function for general read only login
+    username = input("Enter your username: ") # user enters username
+    password = input("Enter your password: ") # user enters password
+    if username not in users:
+        print("Username not found") # indicates username not found
+        return False
+    if bcrypt.checkpw(password.encode('utf-8'), users[username]): # checks password
+        print("Login successful")
+        read_only_functions() # calls read only functions for use
+        return True
+    else:
+        print("Password incorrect.") # indicates password incorrect
+        return False
+
+admin_check() # calls admin check to start the process of the application
       ```
 
 ---
