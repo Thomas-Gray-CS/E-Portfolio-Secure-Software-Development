@@ -22,4 +22,4 @@ This is a document showing how work was split for the assignment, and draft info
 
 Below is my reflection on this assignment, which provides further information about my input and thought processes.
 
-[Reflection - Team Assignment](/pdf/team_reflection.pdf)
+[Reflection - Team Assignment](/pdf/ssd_team_reflection.pdf)
