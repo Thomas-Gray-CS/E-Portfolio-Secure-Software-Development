@@ -82,7 +82,7 @@ Below is a response I provided to another student in reference to the work in Un
 
 Below is my summary post from the discussions in Unit 8 and Unit 9.
 
-[Summary Post](/pdf/summary ssd.pdf)
+[Summary Post](/pdf/summary_ssd.pdf)
 
 
 
