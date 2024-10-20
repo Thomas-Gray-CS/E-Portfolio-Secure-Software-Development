@@ -10,7 +10,7 @@ Below is the Python code to support the operation of a driverless car, as well a
 
 
   ```
-     import uuid # imports UUID for use in student ID security
+import uuid # imports UUID for use in student ID security
 
 import bcrypt # import bcrypt for use in password hashing
 
@@ -162,8 +162,61 @@ admin_check() # calls admin check to start the process of the application
       ```
 
 ---
-### README File Explaining The System Implementation
 
-[System Implementation](/pdf/system-implementation.pdf)
+ ```
+import unittest # unit test module imported
+from SMS_File import Student, StudentRecords # pulls main file for use, as well as classes from this
+
+class TestStudent(unittest.TestCase): # test for student class
+    def setUp(self):
+        self.student = Student(name="Test Student", year_group="10", form="10A") # mock record for use
+
+    def test_add_class(self): # test for the add_class function
+        self.student.add_class("Computer Science")
+        self.assertIn("Computer Science", self.student.classes) # confirms whether present
+
+    def test_remove_class(self): # test for the remove_class function
+        self.student.add_class("Computer Science") # adds a class
+        self.student.remove_class("Computer Science") # removes added class
+        self.assertNotIn("Computer Science", self.student.classes) # checks if class no longer present
+
+    def test_get_student_details(self): # test for fetching student details
+        details = self.student.get_student_details() # takes previously added details from the test
+        expected_details = {
+            "ID": self.student.student_id,
+            "name": "Test Student",
+            "year": "10",
+            "form": "10A"
+        }
+        self.assertEqual(details, expected_details) # checks whether the student has been added and displays this
+
+class TestStudentRecords(unittest.TestCase): # testing for student record class
+    def setUp(self):
+        self.records = StudentRecords()
+        self.records.add_student(name="Test Student", year_group="10", form="10A") # creates a record for use
+
+    def test_add_student(self): # testing for student add function
+        self.records.add_student(name="Student Test", year_group="9", form="9B") #  adds a student record to test function
+        student_ids = [student.student_id for student in self.records.students.values()]
+        self.assertIn(self.records.students[student_ids[1]].student_id, student_ids)
+
+    def test_display_student(self): # testing for student display function
+        student_id = list(self.records.students.keys())[0] # lists the amount of students and their keys
+        with self.assertLogs(level='INFO') as log:
+            self.records.display_student(student_id)
+            self.assertIn(f"{student_id}Test Sudent, 10, 10A.", log.output[0]) # should check whether student exists and how many
+
+    def test_remove_student(self): # testing to remove student
+        student_id = list(self.records.students.keys())[0] # lists the keys and amount of students 
+        self.records.remove_student(student_id)
+        self.assertNotIn(student_id, self.records.students) # removes student and checks this has been done
+
+if __name__ == '__main__':
+    unittest.main()
+ ```
+
+---
+
+### Readme File
 
 
