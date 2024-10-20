@@ -12,6 +12,9 @@ Below are blocks of code from my second assignment. The first block is the code 
 
 ### README file
 
+[README School System](/pdf/readme_school_system.pdf) 
+
+---
 
   ```
 import uuid # imports UUID for use in student ID security
