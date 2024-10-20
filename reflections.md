@@ -4,7 +4,7 @@ Below are reflection pieces written regarding two of the assignments completed d
 
 ### System Design Reflection
 
-[System Design - Reflection](/pdf/system_design_reflection.pdf) 
+[Team Reflection](/pdf/ssd_team_reflection.pdf) 
 
 
 ### System Implementation Reflection
