@@ -213,9 +213,3 @@ class TestStudentRecords(unittest.TestCase): # testing for student record class
 if __name__ == '__main__':
     unittest.main()
 
-     ```
----
-
-
-
-
