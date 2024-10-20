@@ -2,23 +2,29 @@ Object Oriented Programming - Artefacts
 
 On this page are a number of artefacts that I have gather from my studies of Object Oriented Programming as part of my MSc Computer Science course. These show my development relating to coding practice, UML and computing theory that aligns with OOP.
 
-### Artefact 1: Reflections on the Power of E-Portfolios
 
-[E-Portfolio Development Reflection](/pdf/e_portfolio_development.pdf)
+### Unit 2: UML Modelling to Support Secure System Planning
 
+Below is a discussion on ISO/IEC 27000 and how people management techniques can ensure compliance of this.
 
-### Artefact 2: Collaborative Discussion regarding Reusability of Code in OOP
-
-The below artefact shows how I meet Learning Outcome 1) Appraise and critically evaluate object-oriented programming compared to other programming paradigms.
-
-[Collaborative Discussion](/pdf/collaborative_discussion.pdf)
+[ISO/IEC 27000 Standards](/pdf/individuals_security.pdf)
 
 
-### Artefact 3: UML Models within the Software Development Life Cycle
+### Unit 5: An Introduction to Testing
 
-The below artefact shows how I meet Learning Outcome 4) Propose object-oriented solutions using an appropriate modelling language, such as UML.
+Below is a discussion regarding the relevance of Cyclomatic Complexity in modern day programming.
 
-[UML and SDLC](/pdf/uml_in_sdlc.pdf)
+[Exploring the Cyclomatic Complexity’s Relevance Today](/pdf/cyclomatic_complexity.pdf)
+
+
+### Unit 8: Cryptography and Its Use in Operating Systems
+
+Below is a discussion on an encryption algorithm, and whether it is effective.
+
+[Cryptography Programming Exercise](/pdf/encryption_algorithm.pdf)
+
+
+
 
 
 ### Artefact 4: Python Code Showing Protected and Unprotected Variables
