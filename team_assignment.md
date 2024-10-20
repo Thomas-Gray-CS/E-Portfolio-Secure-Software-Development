@@ -1,4 +1,4 @@
-### Team Assignment - Project Report
+### Team Assignment - Design Document
 
 Below are the documents and deliverables relating to my work, as well as the work of the wider team, during the Team Assignment part of this module.
 I have included the final proposal document, as well as information relating to my specific work completed during the assignment phase.
