@@ -1,6 +1,6 @@
-Object Oriented Programming - Artefacts 
+Secure Software Development - Artefacts 
 
-On this page are a number of artefacts that I have gather from my studies of Object Oriented Programming as part of my MSc Computer Science course. These show my development relating to coding practice, UML and computing theory that aligns with OOP.
+On this page are a number of artefacts that I have gather from my studies of Secure Software Development as part of my MSc Computer Science course. These show my development relating to secure coding, data security and legal compliance.
 
 
 ### Unit 2: UML Modelling to Support Secure System Planning
@@ -60,6 +60,13 @@ Below is a discussion regarding the relevance of Cyclomatic Complexity in modern
 [Exploring the Cyclomatic Complexity’s Relevance Today](/pdf/cyclomatic_complexity.pdf)
 
 
+### Unit 6: Using Linters to Support Python Testing
+
+Below is a link to the group assignment completed during this module.
+
+[Team Assignment](/team_assignment.md)
+
+
 ### Unit 8: Cryptography and Its Use in Operating Systems
 
 Below is a discussion on an encryption algorithm, and whether it is effective.
@@ -83,6 +90,13 @@ Below is a response I provided to another student in reference to the work in Un
 Below is my summary post from the discussions in Unit 8 and Unit 9.
 
 [Summary Post](/pdf/summary_ssd.pdf)
+
+
+### Unit 11: Future trends in Secure Software Development
+
+Below is a link to the group assignment completed during this module.
+
+[Individual Assignment](/individual_assignment.md)
 
 
 
